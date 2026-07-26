@@ -70,7 +70,7 @@ export function WhoWeAreSection({
         >
           {/* Mobile: no white card shell. Desktop: keep framed stage */}
           <div className="overflow-visible rounded-none border-0 bg-transparent shadow-none sm:overflow-hidden sm:rounded-[2rem] sm:border sm:border-[#dce6f4] sm:bg-white sm:shadow-[0_24px_80px_rgba(20,40,80,0.08)]">
-            <div className="relative px-1 pb-2 pt-[5.5rem] sm:px-10 sm:pb-8 sm:pt-24">
+            <div className="relative px-1 pb-2 pt-[6.25rem] sm:px-10 sm:pb-8 sm:pt-24">
               {/* Progress track */}
               <div className="relative mx-auto h-1.5 max-w-4xl rounded-full bg-[#e8eef7] sm:h-2.5">
                 <div
@@ -81,25 +81,25 @@ export function WhoWeAreSection({
 
               {/* Car — sits clearly above the track */}
               <div
-                className="pointer-events-none absolute top-2 z-20 -translate-x-1/2 transition-[left] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] sm:top-6"
+                className="pointer-events-none absolute top-3 z-20 -translate-x-1/2 transition-[left] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] sm:top-6"
                 style={{
                   left: `clamp(2.25rem, ${carLeft}%, calc(100% - 2.25rem))`,
                 }}
               >
-                <div className="absolute inset-x-3 bottom-0 h-3 rounded-full bg-accent/15 blur-lg sm:inset-x-6 sm:bottom-2 sm:h-5" />
-                <div className="relative h-[3.6rem] w-[5.75rem] sm:h-[7.25rem] sm:w-[11.5rem]">
+                <div className="relative h-[3.75rem] w-[6rem] sm:h-[7.25rem] sm:w-[11.5rem]">
                   <Image
                     src="/who-car-3d.webp"
                     alt=""
                     fill
-                    className="object-contain object-bottom drop-shadow-[0_12px_24px_rgba(0,87,255,0.28)]"
-                    sizes="(max-width: 640px) 92px, 184px"
+                    unoptimized
+                    className="object-contain object-bottom"
+                    sizes="(max-width: 640px) 96px, 184px"
                   />
                 </div>
               </div>
 
-              {/* Year markers — extra clearance under track/car */}
-              <div className="relative mx-auto mt-10 flex max-w-4xl gap-1.5 overflow-x-auto px-0.5 pb-1 [-ms-overflow-style:none] [scrollbar-width:none] sm:mt-8 sm:justify-between sm:gap-0 sm:overflow-visible sm:pb-0 [&::-webkit-scrollbar]:hidden">
+              {/* Year markers — clear gap under track/car */}
+              <div className="relative mx-auto mt-12 flex max-w-4xl gap-1.5 overflow-x-auto px-0.5 pb-1 [-ms-overflow-style:none] [scrollbar-width:none] sm:mt-8 sm:justify-between sm:gap-0 sm:overflow-visible sm:pb-0 [&::-webkit-scrollbar]:hidden">
                 {milestones.map((item, index) => {
                   const selected = index === active;
                   return (
@@ -107,20 +107,20 @@ export function WhoWeAreSection({
                       key={item.year}
                       type="button"
                       onClick={() => setActive(index)}
-                      className="group flex min-w-[4.1rem] flex-1 flex-col items-center gap-2.5 sm:min-w-0 sm:gap-3"
+                      className="group flex min-w-[4.1rem] flex-1 flex-col items-center gap-3 sm:min-w-0 sm:gap-3"
                     >
                       <span
                         className={`rounded-full transition-all duration-500 ${
                           selected
                             ? "h-3 w-3 bg-accent shadow-[0_0_0_5px_rgba(0,87,255,0.16)] sm:h-4 sm:w-4 sm:shadow-[0_0_0_8px_rgba(0,87,255,0.16)]"
-                            : "h-2 w-2 bg-[#d5deec] ring-2 ring-white sm:h-3 sm:w-3 sm:bg-white sm:ring-[3px] sm:ring-[#c7d4ea] group-hover:ring-accent/50"
+                            : "h-2.5 w-2.5 bg-[#cfd8e8] sm:h-3 sm:w-3 sm:bg-white sm:ring-[3px] sm:ring-[#c7d4ea] group-hover:ring-accent/50"
                         }`}
                       />
                       <span
-                        className={`rounded-full px-2 py-1 font-[family-name:var(--font-dm-sans)] text-[10px] font-bold tracking-wide transition sm:px-3 sm:py-1.5 sm:text-sm ${
+                        className={`rounded-full px-2.5 py-1 font-[family-name:var(--font-dm-sans)] text-[11px] font-bold tracking-wide transition sm:px-3 sm:py-1.5 sm:text-sm ${
                           selected
                             ? "bg-accent text-white shadow-[0_8px_20px_rgba(0,87,255,0.28)]"
-                            : "bg-[#f0f3f8] text-[#6b7385] group-hover:text-accent"
+                            : "bg-transparent text-[#6b7385] group-hover:text-accent sm:bg-[#f0f3f8]"
                         }`}
                       >
                         {item.year}
@@ -191,7 +191,7 @@ export function WhoWeAreSection({
                   {current.points.map((point) => (
                     <li
                       key={point}
-                      className="flex gap-2.5 rounded-xl bg-[#f3f7ff] px-3.5 py-3 text-[13px] leading-relaxed text-[#3d4659] sm:gap-3 sm:rounded-2xl sm:px-4 sm:py-3.5 sm:text-[15px]"
+                      className="flex gap-2.5 rounded-none bg-transparent px-0 py-1.5 text-[13px] leading-relaxed text-[#3d4659] sm:gap-3 sm:rounded-2xl sm:bg-[#f3f7ff] sm:px-4 sm:py-3.5 sm:text-[15px]"
                     >
                       <span className="mt-1.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent">
                         <svg

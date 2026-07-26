@@ -41,6 +41,7 @@ function DesktopModelCard({
             src={image.src}
             alt={image.alt}
             fill
+            unoptimized
             className="object-contain object-center"
             sizes="100px"
           />
@@ -188,24 +189,22 @@ function MobileModelsCarousel({ models }: { models: ModelItem[] }) {
             <article
               key={`${model.title}-${trackIndex}`}
               data-model-card
-              className="flex w-[min(78vw,18.5rem)] shrink-0 snap-center flex-col overflow-hidden rounded-[1.35rem] border-0 bg-transparent shadow-none"
+              className="flex w-[min(82vw,19rem)] shrink-0 snap-center flex-col gap-1 overflow-visible bg-transparent"
             >
-              {/* Asset sits without a white / tinted plate behind it */}
-              <div className="relative flex aspect-[5/4] items-center justify-center">
-                <span className="absolute top-3 left-3 z-10 font-[family-name:var(--font-dm-sans)] text-[11px] font-bold tracking-[0.14em] text-accent/70">
+              <div className="relative mx-auto aspect-square w-[78%]">
+                <span className="absolute top-0 left-0 z-10 font-[family-name:var(--font-dm-sans)] text-[11px] font-bold tracking-[0.14em] text-accent/70">
                   {num}
                 </span>
-                <div className="relative h-[78%] w-[78%]">
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    fill
-                    className="object-contain object-center"
-                    sizes="200px"
-                  />
-                </div>
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  unoptimized
+                  className="object-contain object-center"
+                  sizes="220px"
+                />
               </div>
-              <div className="flex flex-1 flex-col rounded-[1.15rem] border border-[#e8ecf2] bg-white px-4 pt-3.5 pb-4 shadow-[0_8px_24px_rgba(20,35,60,0.06)]">
+              <div className="flex flex-1 flex-col px-1 pt-1 pb-2">
                 <h3 className="font-[family-name:var(--font-douyin-sans)] text-[1.05rem] font-bold leading-snug tracking-tight text-[#191919]">
                   {model.title}
                 </h3>
@@ -265,7 +264,7 @@ export function ModelsSection({ title, body, models }: ModelsSectionProps) {
   return (
     <section className="relative overflow-hidden border-b border-line px-0 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
       <div className="pointer-events-none absolute inset-0" aria-hidden>
-        <div className="absolute inset-0 bg-[#f7f8fa] sm:bg-[#eef2f8]" />
+        <div className="absolute inset-0 bg-white sm:bg-[#eef2f8]" />
         <div className="absolute -left-16 top-[18%] hidden h-80 w-80 rounded-full bg-[#c9d6ea]/70 blur-3xl sm:block" />
         <div className="absolute -right-12 bottom-[10%] hidden h-96 w-96 rounded-full bg-[#d2dced]/80 blur-3xl sm:block" />
       </div>
