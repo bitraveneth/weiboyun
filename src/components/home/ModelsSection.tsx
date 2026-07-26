@@ -61,23 +61,41 @@ function DesktopModelCard({
 const AUTO_MS = 3800;
 
 function MobileModelsCarousel({ models }: { models: ModelItem[] }) {
+  const rootRef = useRef<HTMLDivElement>(null);
   const scrollerRef = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
   const [progressKey, setProgressKey] = useState(0);
   const activeRef = useRef(0);
+  const inViewRef = useRef(false);
+  const pausedRef = useRef(false);
 
   activeRef.current = active;
+  pausedRef.current = paused;
 
   const scrollTo = (index: number) => {
     const el = scrollerRef.current;
-    const card = el?.querySelectorAll<HTMLElement>("[data-model-card]")[index];
-    card?.scrollIntoView({
-      behavior: "smooth",
-      inline: "center",
-      block: "nearest",
-    });
+    if (!el) return;
+    const card = el.querySelectorAll<HTMLElement>("[data-model-card]")[index];
+    if (!card) return;
+    // Horizontal only — never use scrollIntoView (it jumps the page to this section)
+    const left =
+      card.offsetLeft - (el.clientWidth - card.offsetWidth) / 2;
+    el.scrollTo({ left: Math.max(0, left), behavior: "smooth" });
   };
+
+  useEffect(() => {
+    const root = rootRef.current;
+    if (!root) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        inViewRef.current = entry.isIntersecting;
+      },
+      { threshold: 0.35 }
+    );
+    observer.observe(root);
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     const el = scrollerRef.current;
@@ -112,16 +130,17 @@ function MobileModelsCarousel({ models }: { models: ModelItem[] }) {
     if (reduceMotion.matches || models.length < 2) return;
 
     const timer = window.setInterval(() => {
-      if (paused) return;
+      if (pausedRef.current || !inViewRef.current) return;
       const next = (activeRef.current + 1) % models.length;
       scrollTo(next);
     }, AUTO_MS);
 
     return () => window.clearInterval(timer);
-  }, [paused, models.length]);
+  }, [models.length]);
 
   return (
     <div
+      ref={rootRef}
       className="sm:hidden"
       onTouchStart={() => setPaused(true)}
       onTouchEnd={() => {
@@ -223,11 +242,9 @@ export function ModelsSection({ title, body, models }: ModelsSectionProps) {
   return (
     <section className="relative overflow-hidden border-b border-line px-0 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
       <div className="pointer-events-none absolute inset-0" aria-hidden>
-        <div className="absolute inset-0 bg-[#e9eef6]" />
-        <div className="absolute -left-16 top-[18%] h-80 w-80 rounded-full bg-[#c9d6ea]/80 blur-3xl" />
-        <div className="absolute -right-12 bottom-[10%] h-96 w-96 rounded-full bg-[#d2dced]/90 blur-3xl" />
-        <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-white to-transparent" />
-        <div className="absolute inset-x-0 top-0 h-10 bg-gradient-to-b from-white to-transparent" />
+        <div className="absolute inset-0 bg-[#f7f8fa] sm:bg-[#eef2f8]" />
+        <div className="absolute -left-16 top-[18%] hidden h-80 w-80 rounded-full bg-[#c9d6ea]/70 blur-3xl sm:block" />
+        <div className="absolute -right-12 bottom-[10%] hidden h-96 w-96 rounded-full bg-[#d2dced]/80 blur-3xl sm:block" />
       </div>
 
       <div className="relative mx-auto max-w-6xl">

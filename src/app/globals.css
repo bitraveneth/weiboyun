@@ -40,9 +40,20 @@
 }
 
 html {
-  scroll-behavior: smooth;
   background-color: #ffffff;
   overflow-x: clip;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@media (max-width: 639px) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 body {

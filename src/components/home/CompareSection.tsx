@@ -228,9 +228,9 @@ export function CompareSection({
   return (
     <section className="relative overflow-hidden border-b border-line px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
       <div className="pointer-events-none absolute inset-0" aria-hidden>
-        <div className="absolute inset-0 bg-[#f3f6fb]" />
-        <div className="absolute -left-28 top-10 h-[26rem] w-[26rem] rounded-full bg-[#0057ff]/[0.12] blur-3xl" />
-        <div className="absolute -right-24 top-32 h-[24rem] w-[24rem] rounded-full bg-[#00c2ff]/[0.1] blur-3xl" />
+        <div className="absolute inset-0 bg-[#f7f8fa] sm:bg-[#f3f6fb]" />
+        <div className="absolute -left-28 top-10 hidden h-[26rem] w-[26rem] rounded-full bg-[#0057ff]/[0.1] blur-3xl sm:block" />
+        <div className="absolute -right-24 top-32 hidden h-[24rem] w-[24rem] rounded-full bg-[#00c2ff]/[0.08] blur-3xl sm:block" />
       </div>
 
       <div className="relative mx-auto max-w-6xl">

@@ -98,12 +98,12 @@ export function HeroBackground({
         );
       })}
 
-      {/* Mobile overlay — deep bottom stage for readable type */}
+      {/* Mobile overlay — smooth top→bottom, no mid banding */}
       <div
         className="pointer-events-none absolute inset-0 sm:hidden"
         style={{
           background:
-            "linear-gradient(180deg, rgba(6,10,18,0.55) 0%, rgba(6,10,18,0.28) 26%, rgba(6,10,18,0.62) 48%, rgba(6,10,18,0.94) 76%, rgba(6,10,18,0.97) 100%)",
+            "linear-gradient(180deg, rgba(6,10,18,0.42) 0%, rgba(6,10,18,0.22) 32%, rgba(6,10,18,0.55) 58%, rgba(6,10,18,0.88) 100%)",
         }}
         aria-hidden
       />
