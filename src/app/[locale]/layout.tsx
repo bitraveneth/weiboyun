@@ -9,6 +9,7 @@ import { routing } from "@/i18n/routing";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { WeChatFloat } from "@/components/WeChatFloat";
+import { BackToTop } from "@/components/BackToTop";
 import "../globals.css";
 
 /** ByteDance 抖音美好体 (Douyin Sans) — same face, WOFF2 for faster load */
@@ -91,6 +92,7 @@ export default async function LocaleLayout({ children, params }: Props) {
           <Header />
           <main className="flex-1">{children}</main>
           <Footer />
+          <BackToTop />
           <WeChatFloat />
         </NextIntlClientProvider>
       </body>

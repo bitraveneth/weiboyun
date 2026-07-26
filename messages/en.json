@@ -43,6 +43,9 @@
     "businessAlt": "Business WeChat QR code",
     "serviceAlt": "Support WeChat QR code"
   },
+  "common": {
+    "backToTop": "Back to top"
+  },
   "home": {
     "heroBrand": "WeiBoYun",
     "heroBadge": "Trusted by parking partners nationwide",

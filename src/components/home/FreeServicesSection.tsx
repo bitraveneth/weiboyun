@@ -14,21 +14,19 @@ type FreeServicesSectionProps = {
 
 function ServiceCard({ panel }: { panel: ServicePanel }) {
   return (
-    <article className="group relative flex h-full flex-col overflow-hidden rounded-[1.25rem] border border-[#e5eaf2] bg-white shadow-[0_8px_28px_rgba(15,30,60,0.06)] transition-all duration-300 hover:-translate-y-1.5 hover:border-accent/25 hover:shadow-[0_22px_48px_rgba(0,87,255,0.16)] sm:rounded-[1.5rem] sm:border-[#d0d7e4] sm:shadow-[0_12px_40px_rgba(15,30,60,0.12)] sm:flex-row">
-      {/* Image — flush on mobile, framed well on desktop */}
-      <div className="relative flex shrink-0 items-center justify-center bg-[#f5f7fb] px-4 pt-4 transition-colors duration-300 group-hover:bg-[#eef3fa] sm:w-[48%] sm:min-h-[240px] sm:bg-[#f3f6fb] sm:p-5 sm:group-hover:bg-[#e8eef8] lg:w-[50%]">
-        {/* Mobile: no nested white card */}
-        <div className="relative mx-auto aspect-[4/3] w-full max-w-[220px] sm:hidden">
+    <article className="group relative flex h-full flex-col overflow-hidden rounded-none border-0 bg-transparent shadow-none transition-all duration-300 sm:rounded-[1.5rem] sm:border sm:border-[#d0d7e4] sm:bg-white sm:shadow-[0_12px_40px_rgba(15,30,60,0.12)] sm:hover:-translate-y-1.5 sm:hover:border-accent/25 sm:hover:shadow-[0_22px_48px_rgba(0,87,255,0.16)] sm:flex-row">
+      {/* Image — no white frame on mobile */}
+      <div className="relative flex shrink-0 items-center justify-center bg-transparent px-1 pt-1 sm:w-[48%] sm:min-h-[240px] sm:bg-[#f3f6fb] sm:p-5 sm:group-hover:bg-[#e8eef8] lg:w-[50%]">
+        <div className="relative mx-auto aspect-[4/3] w-full max-w-[240px] sm:hidden">
           <Image
             src={panel.image}
             alt={panel.imageAlt}
             fill
             unoptimized={panel.image.endsWith(".svg")}
             className="object-contain object-center"
-            sizes="220px"
+            sizes="240px"
           />
         </div>
-        {/* Desktop: framed image well */}
         <div className="relative hidden aspect-square w-full max-w-[240px] items-center justify-center rounded-[1.25rem] border border-[#e2e8f0] bg-white shadow-[0_4px_16px_rgba(15,30,60,0.06)] transition-shadow duration-300 group-hover:shadow-[0_10px_24px_rgba(0,87,255,0.12)] sm:flex lg:max-w-[260px]">
           <div className="relative h-[88%] w-[88%] transition-transform duration-300 group-hover:scale-[1.05]">
             <Image
@@ -43,8 +41,7 @@ function ServiceCard({ panel }: { panel: ServicePanel }) {
         </div>
       </div>
 
-      {/* Content */}
-      <div className="relative flex flex-1 flex-col justify-center border-t border-[#e5eaf2] px-5 pb-6 pt-4 sm:border-l sm:border-t-0 sm:px-7 sm:py-8 lg:px-8">
+      <div className="relative flex flex-1 flex-col justify-center border-0 px-1 pb-6 pt-3 sm:border-l sm:border-[#e5eaf2] sm:px-7 sm:py-8 lg:px-8">
         <h3 className="font-[family-name:var(--font-douyin-sans)] text-lg font-bold tracking-tight text-[#191919] sm:text-xl">
           {panel.badge}
         </h3>
@@ -53,7 +50,7 @@ function ServiceCard({ panel }: { panel: ServicePanel }) {
           aria-hidden
         />
 
-        <ul className="mt-5 space-y-3">
+        <ul className="mt-4 space-y-3 sm:mt-5">
           {panel.points.map((point) => (
             <li
               key={point}
@@ -95,7 +92,7 @@ export function FreeServicesSection({
           />
         </div>
 
-        <div className="mt-7 grid gap-4 sm:mt-10 sm:grid-cols-2 sm:gap-6 lg:gap-7">
+        <div className="mt-7 grid gap-8 sm:mt-10 sm:grid-cols-2 sm:gap-6 lg:gap-7">
           {cards.map((card) => (
             <ServiceCard key={card.badge} panel={card} />
           ))}

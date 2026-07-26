@@ -35,13 +35,13 @@ function DesktopModelCard({
 }) {
   return (
     <article className="group flex h-full items-start gap-5 rounded-[1.25rem] border border-[#d0d7e4] bg-white p-5 shadow-[0_10px_32px_rgba(15,30,60,0.1)] transition-all duration-300 hover:-translate-y-1 hover:border-accent/25 hover:shadow-[0_18px_44px_rgba(0,87,255,0.14)]">
-      <div className="relative flex h-[6.25rem] w-[6.25rem] shrink-0 items-center justify-center overflow-hidden rounded-[1rem] bg-[#e8eef8] shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] transition-colors duration-300 group-hover:bg-[#dce6f6]">
+      <div className="relative flex h-[6.25rem] w-[6.25rem] shrink-0 items-center justify-center overflow-hidden rounded-[1rem] bg-[#f3f4f6] transition-colors duration-300 group-hover:bg-[#eceef2]">
         <div className="relative h-[88%] w-[88%] transition-transform duration-300 group-hover:scale-[1.06]">
           <Image
             src={image.src}
             alt={image.alt}
             fill
-            className="object-contain object-center mix-blend-multiply"
+            className="object-contain object-center"
             sizes="100px"
           />
         </div>
@@ -168,7 +168,7 @@ function MobileModelsCarousel({ models }: { models: ModelItem[] }) {
               data-model-card
               className="flex w-[min(78vw,18.5rem)] shrink-0 snap-center flex-col overflow-hidden rounded-[1.35rem] border border-[#d5deec] bg-white shadow-[0_14px_40px_rgba(20,35,60,0.1)]"
             >
-              <div className="relative flex aspect-[5/4] items-center justify-center bg-gradient-to-b from-[#eef3fb] to-[#e4ebf5]">
+              <div className="relative flex aspect-[5/4] items-center justify-center bg-[#f7f8fa]">
                 <span className="absolute top-3 left-3 font-[family-name:var(--font-dm-sans)] text-[11px] font-bold tracking-[0.14em] text-accent/70">
                   {num}
                 </span>
@@ -177,7 +177,7 @@ function MobileModelsCarousel({ models }: { models: ModelItem[] }) {
                     src={image.src}
                     alt={image.alt}
                     fill
-                    className="object-contain object-center mix-blend-multiply"
+                    className="object-contain object-center"
                     sizes="200px"
                   />
                 </div>

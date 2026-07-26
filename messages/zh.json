@@ -43,6 +43,9 @@
     "businessAlt": "商务合作微信二维码",
     "serviceAlt": "客户服务微信二维码"
   },
+  "common": {
+    "backToTop": "回到顶部"
+  },
   "home": {
     "heroBrand": "微泊云",
     "heroBadge": "已服务万千停车行业伙伴",
