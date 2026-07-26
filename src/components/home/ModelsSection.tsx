@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 type ModelItem = {
   title: string;
@@ -69,19 +69,64 @@ function MobileModelsCarousel({ models }: { models: ModelItem[] }) {
   const activeRef = useRef(0);
   const inViewRef = useRef(false);
   const pausedRef = useRef(false);
+  const jumpingRef = useRef(false);
+
+  const count = models.length;
+  // Duplicate track once so last → first can keep scrolling forward
+  const track = useMemo(() => [...models, ...models], [models]);
 
   activeRef.current = active;
   pausedRef.current = paused;
 
-  const scrollTo = (index: number) => {
+  const scrollToTrackIndex = (
+    trackIndex: number,
+    behavior: ScrollBehavior = "smooth"
+  ) => {
     const el = scrollerRef.current;
     if (!el) return;
-    const card = el.querySelectorAll<HTMLElement>("[data-model-card]")[index];
+    const card = el.querySelectorAll<HTMLElement>("[data-model-card]")[
+      trackIndex
+    ];
     if (!card) return;
-    // Horizontal only — never use scrollIntoView (it jumps the page to this section)
-    const left =
-      card.offsetLeft - (el.clientWidth - card.offsetWidth) / 2;
-    el.scrollTo({ left: Math.max(0, left), behavior: "smooth" });
+    const left = card.offsetLeft - (el.clientWidth - card.offsetWidth) / 2;
+    el.scrollTo({ left: Math.max(0, left), behavior });
+  };
+
+  const syncFromScroll = () => {
+    const el = scrollerRef.current;
+    if (!el || jumpingRef.current) return;
+    const cards = el.querySelectorAll<HTMLElement>("[data-model-card]");
+    if (!cards.length) return;
+
+    const mid = el.scrollLeft + el.clientWidth / 2;
+    let best = 0;
+    let bestDist = Infinity;
+    cards.forEach((card, i) => {
+      const center = card.offsetLeft + card.offsetWidth / 2;
+      const dist = Math.abs(center - mid);
+      if (dist < bestDist) {
+        bestDist = dist;
+        best = i;
+      }
+    });
+
+    // Landed on the duplicated set — snap back without animation
+    if (best >= count) {
+      jumpingRef.current = true;
+      const real = best % count;
+      scrollToTrackIndex(real, "auto");
+      setActive(real);
+      activeRef.current = real;
+      window.requestAnimationFrame(() => {
+        jumpingRef.current = false;
+      });
+      return;
+    }
+
+    setActive((prev) => {
+      if (prev !== best) setProgressKey((k) => k + 1);
+      return best;
+    });
   };
 
   useEffect(() => {
@@ -100,43 +145,24 @@ function MobileModelsCarousel({ models }: { models: ModelItem[] }) {
   useEffect(() => {
     const el = scrollerRef.current;
     if (!el) return;
-
-    const onScroll = () => {
-      const cards = el.querySelectorAll<HTMLElement>("[data-model-card]");
-      if (!cards.length) return;
-      const mid = el.scrollLeft + el.clientWidth / 2;
-      let best = 0;
-      let bestDist = Infinity;
-      cards.forEach((card, i) => {
-        const center = card.offsetLeft + card.offsetWidth / 2;
-        const dist = Math.abs(center - mid);
-        if (dist < bestDist) {
-          bestDist = dist;
-          best = i;
-        }
-      });
-      setActive((prev) => {
-        if (prev !== best) setProgressKey((k) => k + 1);
-        return best;
-      });
-    };
-
-    el.addEventListener("scroll", onScroll, { passive: true });
-    return () => el.removeEventListener("scroll", onScroll);
-  }, []);
+    el.addEventListener("scroll", syncFromScroll, { passive: true });
+    return () => el.removeEventListener("scroll", syncFromScroll);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [count]);
 
   useEffect(() => {
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (reduceMotion.matches || models.length < 2) return;
+    if (reduceMotion.matches || count < 2) return;
 
     const timer = window.setInterval(() => {
-      if (pausedRef.current || !inViewRef.current) return;
-      const next = (activeRef.current + 1) % models.length;
-      scrollTo(next);
+      if (pausedRef.current || !inViewRef.current || jumpingRef.current) return;
+      const current = activeRef.current;
+      // Always move forward: last → first clone (index count), then snap back
+      scrollToTrackIndex(current + 1, "smooth");
     }, AUTO_MS);
 
     return () => window.clearInterval(timer);
-  }, [models.length]);
+  }, [count]);
 
   return (
     <div
@@ -149,30 +175,27 @@ function MobileModelsCarousel({ models }: { models: ModelItem[] }) {
           setProgressKey((k) => k + 1);
         }, 2200);
       }}
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => {
-        setPaused(false);
-        setProgressKey((k) => k + 1);
-      }}
     >
       <div
         ref={scrollerRef}
         className="flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       >
-        {models.map((model, index) => {
-          const image = MODEL_IMAGES[index];
-          const num = String(index + 1).padStart(2, "0");
+        {track.map((model, trackIndex) => {
+          const realIndex = trackIndex % count;
+          const image = MODEL_IMAGES[realIndex];
+          const num = String(realIndex + 1).padStart(2, "0");
           return (
             <article
-              key={model.title}
+              key={`${model.title}-${trackIndex}`}
               data-model-card
-              className="flex w-[min(78vw,18.5rem)] shrink-0 snap-center flex-col overflow-hidden rounded-[1.35rem] border border-[#d5deec] bg-white shadow-[0_14px_40px_rgba(20,35,60,0.1)]"
+              className="flex w-[min(78vw,18.5rem)] shrink-0 snap-center flex-col overflow-hidden rounded-[1.35rem] border-0 bg-transparent shadow-none"
             >
-              <div className="relative flex aspect-[5/4] items-center justify-center bg-[#f7f8fa]">
-                <span className="absolute top-3 left-3 font-[family-name:var(--font-dm-sans)] text-[11px] font-bold tracking-[0.14em] text-accent/70">
+              {/* Asset sits without a white / tinted plate behind it */}
+              <div className="relative flex aspect-[5/4] items-center justify-center">
+                <span className="absolute top-3 left-3 z-10 font-[family-name:var(--font-dm-sans)] text-[11px] font-bold tracking-[0.14em] text-accent/70">
                   {num}
                 </span>
-                <div className="relative h-[68%] w-[68%]">
+                <div className="relative h-[78%] w-[78%]">
                   <Image
                     src={image.src}
                     alt={image.alt}
@@ -182,7 +205,7 @@ function MobileModelsCarousel({ models }: { models: ModelItem[] }) {
                   />
                 </div>
               </div>
-              <div className="flex flex-1 flex-col px-4 pt-3.5 pb-4">
+              <div className="flex flex-1 flex-col rounded-[1.15rem] border border-[#e8ecf2] bg-white px-4 pt-3.5 pb-4 shadow-[0_8px_24px_rgba(20,35,60,0.06)]">
                 <h3 className="font-[family-name:var(--font-douyin-sans)] text-[1.05rem] font-bold leading-snug tracking-tight text-[#191919]">
                   {model.title}
                 </h3>
@@ -204,7 +227,7 @@ function MobileModelsCarousel({ models }: { models: ModelItem[] }) {
             }`}
             style={
               paused
-                ? { width: `${((active + 1) / models.length) * 100}%` }
+                ? { width: `${((active + 1) / count) * 100}%` }
                 : undefined
             }
           />
@@ -218,7 +241,7 @@ function MobileModelsCarousel({ models }: { models: ModelItem[] }) {
               aria-current={index === active}
               onClick={() => {
                 setPaused(true);
-                scrollTo(index);
+                scrollToTrackIndex(index, "smooth");
                 window.setTimeout(() => {
                   setPaused(false);
                   setProgressKey((k) => k + 1);
@@ -231,7 +254,7 @@ function MobileModelsCarousel({ models }: { models: ModelItem[] }) {
           ))}
         </div>
         <p className="font-[family-name:var(--font-dm-sans)] text-[12px] font-medium text-[#98a2b3]">
-          {active + 1} / {models.length}
+          {active + 1} / {count}
         </p>
       </div>
     </div>
