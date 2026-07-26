@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local audits / temp assets
+lighthouse-desktop*
+ChatGPT Image*
+39afbe9a-*.png
+/services-cloudops.webp

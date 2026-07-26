@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="360" viewBox="0 0 480 360" fill="none">
+  <rect width="480" height="360" rx="24" fill="#E8F0FF"/>
+  <rect x="120" y="80" width="180" height="140" rx="12" fill="#0057FF" opacity="0.9"/>
+  <rect x="140" y="100" width="140" height="90" rx="6" fill="#B8D0FF"/>
+  <circle cx="280" cy="150" r="48" fill="#003DB3" opacity="0.85"/>
+  <circle cx="280" cy="150" r="28" fill="#7EB0FF"/>
+  <circle cx="280" cy="150" r="12" fill="#E8F0FF"/>
+  <rect x="145" y="230" width="150" height="18" rx="4" fill="#0057FF" opacity="0.55"/>
+  <text x="240" y="310" text-anchor="middle" fill="#0057FF" font-family="system-ui,sans-serif" font-size="14" opacity="0.7">�P- � �b�G</text>
+</svg>

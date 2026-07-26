@@ -1,0 +1,541 @@
+{
+  "meta": {
+    "siteName": "WeiBoYun",
+    "defaultTitle": "WeiBoYun — Smart Parking Industry Cloud Platform",
+    "defaultDescription": "WeiBoYun provides a high-quality smart parking cloud for industry partners: high rebate sharing, free after-sales, and free cloud seating — helping providers move from hardware sales to asset-light operations."
+  },
+  "nav": {
+    "home": "Home",
+    "upgrade": "Industry Upgrade",
+    "products": "Solutions",
+    "technology": "Technology",
+    "ads": "Ad Platform",
+    "open": "Open Platform",
+    "dataViz": "Data Visualization",
+    "about": "About Us",
+    "partnerCta": "Partner with us",
+    "learnMore": "Learn more"
+  },
+  "locale": {
+    "zh": "中文",
+    "en": "EN"
+  },
+  "footer": {
+    "tagline": "Cloud-only parking platform. Free cloud seating, free after-sales, and nine rebate models for asset-light growth.",
+    "userAgreement": "User Agreement",
+    "privacy": "Privacy Policy",
+    "officialAccounts": "Official accounts",
+    "contact": "Contact",
+    "phone": "Hotline",
+    "email": "Partnership email",
+    "address": "Address",
+    "rights": "All rights reserved.",
+    "platform": "Platform",
+    "company": "Company"
+  },
+  "wechat": {
+    "title": "WeChat",
+    "subtitle": "Scan to add WeiBoYun on WeChat",
+    "open": "Open WeChat QR codes",
+    "close": "Close",
+    "business": "Business",
+    "service": "Support",
+    "businessAlt": "Business WeChat QR code",
+    "serviceAlt": "Support WeChat QR code"
+  },
+  "home": {
+    "heroBrand": "WeiBoYun",
+    "heroBadge": "Trusted by parking partners nationwide",
+    "heroHeadlineBefore": "Put parking growth on",
+    "heroHeadlineHighlight": "Cloud Autopilot",
+    "heroHeadlineAfter": ".",
+    "heroSupport": "Free cloud seating and free after-sales for every partner lot — plus 20+ rebate services that raise the industry ceiling.",
+    "heroTrust": [
+      "Free cloud seating",
+      "Free lot after-sales",
+      "High rebate sharing"
+    ],
+    "mockup": {
+      "title": "WeiBoYun Ops Console",
+      "subtitle": "Live lot overview",
+      "nav": ["Overview", "Lots", "Orders", "Finance", "Recovery"],
+      "cards": [
+        { "label": "Today revenue", "value": "¥128,460", "delta": "+12.4%" },
+        { "label": "Vehicles on site", "value": "3,842", "delta": "4.2× turnover" },
+        { "label": "Open exceptions", "value": "26", "delta": "Cloud seating" },
+        { "label": "Recovery booked", "value": "¥18,920", "delta": "+8.1%" }
+      ],
+      "chartTitle": "7-day lot revenue",
+      "tableTitle": "Priority lots",
+      "rows": [
+        { "lot": "Galaxy Plaza Lot", "status": "Normal", "revenue": "¥24,180" },
+        { "lot": "Riverside International", "status": "Cloud desk", "revenue": "¥19,640" },
+        { "lot": "East Hub P2", "status": "Recovery", "revenue": "¥31,220" }
+      ]
+    },
+    "statsEyebrow": "China’s first mobile-internet parking platform, launched in 2012",
+    "statsYear": "2012",
+    "statsTitle": " — China’s first mobile-internet parking platform",
+    "stats": {
+      "years": { "value": 14, "suffix": " yrs", "label": "Industry experience", "bar": 100 },
+      "rd": { "value": 300, "suffix": "M+", "label": "Cumulative R&D (RMB)", "bar": 78 },
+      "menus": { "value": 200, "suffix": "+", "label": "Menu-level modules", "bar": 88 },
+      "features": { "value": 4000, "suffix": "+", "label": "Feature points", "bar": 95 }
+    },
+    "freeServices": {
+      "titleBefore": "China’s first cloud platform offering every lot",
+      "titleHighlight": "free cloud seating + free after-sales",
+      "cards": [
+        {
+          "badge": "Free cloud seating",
+          "image": "/services-cloud.webp",
+          "imageAlt": "Free cloud seating",
+          "points": [
+            "Full-lane 24/7 cloud hosting",
+            "Dedicated 24/7 customer answering",
+            "Lower lot operating costs"
+          ]
+        },
+        {
+          "badge": "Free lot after-sales",
+          "image": "/services-aftersales.webp",
+          "imageAlt": "Free lot after-sales",
+          "points": [
+            "24/7 remote debugging support",
+            "Professional technical training",
+            "Round-the-clock ops & maintenance"
+          ]
+        },
+        {
+          "badge": "High rebate sharing",
+          "image": "/services-rebate.webp",
+          "imageAlt": "High rebate sharing",
+          "points": [
+            "20+ rebate & profit-share services",
+            "Auto settlement and payout",
+            "Asset-light growth for partners"
+          ]
+        },
+        {
+          "badge": "Cloud-hosted ops",
+          "image": "/services-cloudops.webp",
+          "imageAlt": "Cloud-hosted ops",
+          "points": [
+            "Parking growth on cloud autopilot",
+            "Live ops console overview",
+            "Fee recovery and full-site monitoring"
+          ]
+        }
+      ]
+    },
+    "modelsTitle": "Nine business models for partner transformation",
+    "modelsBody": "WeiBoYun’s rebate system helps service providers build their own go-to-market models — shifting from hardware sales to asset-light operations.",
+    "models": [
+      {
+        "title": "Free equipment placement",
+        "body": "Rebates can cover equipment cost in 1–3 months, accelerating market capture in a healthy closed loop."
+      },
+      {
+        "title": "Duration coupon procurement",
+        "body": "Providers invest in equipment and cash, co-purchasing parking-duration coupons with lots."
+      },
+      {
+        "title": "Flat-rate operations contract",
+        "body": "Free equipment plus contracting operations rights at annual revenue pricing."
+      },
+      {
+        "title": "Berth swap model",
+        "body": "Free equipment in exchange for a defined set of parking berth resources."
+      },
+      {
+        "title": "Incremental revenue share",
+        "body": "Free equipment; excess incremental revenue is shared by agreed ratios."
+      },
+      {
+        "title": "Cloud hosting fee per lane",
+        "body": "Free equipment with a fixed monthly cloud hosting fee charged per lane."
+      },
+      {
+        "title": "Fee-recovery revenue share",
+        "body": "Free equipment; successful unpaid-fee recovery is shared with the lot."
+      },
+      {
+        "title": "After-sales maintenance fee",
+        "body": "Free equipment with monthly or annual maintenance and after-sales fees."
+      },
+      {
+        "title": "Traditional hardware sales",
+        "body": "Keep existing equipment sales while building pyramid and tree rebate architectures."
+      }
+    ],
+    "platformTitle": "A full-spectrum platform",
+    "platformBody": "WeiBoYun’s internet parking platform spans 8 service platforms, 180+ menu modules, and 3500+ feature points — among the most capable smart parking clouds available.",
+    "partnersTitle": "WeiBoYun builds no hardware",
+    "partnersSubtitle": "Only a high-quality smart-parking industry cloud for partners",
+    "partnersLead": "These customer groups are welcome to explore deep cooperation with WeiBoYun.",
+    "partnerAudiences": [
+      {
+        "title": "Hardware manufacturing factories",
+        "body": "Deep cooperation with top smart-parking hardware factories to solve industry bottlenecks together.",
+        "image": "/partner-factory.webp",
+        "imageAlt": "Hardware manufacturing factories",
+        "theme": "amber"
+      },
+      {
+        "title": "Agents / distributors / integrators",
+        "body": "Hundreds of smart-parking enterprises join WeiBoYun to drive industry upgrade together.",
+        "image": "/partner-agency.webp",
+        "imageAlt": "Agents distributors integrators",
+        "theme": "violet"
+      },
+      {
+        "title": "Property groups / lot operators",
+        "body": "Companies with lot management rights that need stable charging systems and high-quality operations.",
+        "image": "/partner-property.webp",
+        "imageAlt": "Property groups and lot operators",
+        "theme": "mint"
+      },
+      {
+        "title": "Individual partners",
+        "body": "Sales, construction, and after-sales individuals with parking resources who want to monetize them.",
+        "image": "/partner-individual.webp",
+        "imageAlt": "Individual partners",
+        "theme": "sky"
+      }
+    ],
+    "partnerTitle": "Serving partners on the path to industry upgrade",
+    "partnerBody": "Help smart-parking partners move from hardware sales to asset-light operations with new profit models. White-label domain, logo, title, and brand customization empower providers’ own brands. All nine business models ship with matching cloud services — automatic settlement, clearing, and bookkeeping included.",
+    "capabilitiesTitle": "Core capabilities",
+    "capabilities": [
+      "Fee recovery",
+      "Visual orders",
+      "Global monitoring",
+      "Off-peak monthly",
+      "Shared parking",
+      "Visitor booking",
+      "Access control",
+      "Group billing",
+      "EV bays",
+      "E-invoice",
+      "Ops data",
+      "Finance"
+    ],
+    "platformBloomTitle": "Platform capabilities in full bloom!",
+    "platformBloomLead": "WeiBoYun’s internet parking platform includes 8 service platforms, 200+ menu-level features, and 4000+ capability points — one of the strongest smart-parking clouds built so far.",
+    "platformBloomCards": [
+      {
+        "title": "Lot Manager",
+        "badge": "Mobile control",
+        "body": "Dual-end ops (Android + mini program) for on-the-go lot tasks — patrol, gate control, and exception handling.",
+        "theme": "mint"
+      },
+      {
+        "title": "Driver Service",
+        "badge": "Driver experience",
+        "body": "Off-peak passes, payment reminders, and offers that improve driver experience and conversion.",
+        "theme": "amber"
+      },
+      {
+        "title": "Cloud Booth",
+        "badge": "Cloud attendant",
+        "body": "Centralized multi-lot attendance with cloud seating, live entry feeds, and remote gate actions.",
+        "theme": "violet"
+      },
+      {
+        "title": "Smart Parking",
+        "badge": "Remote control",
+        "body": "Professional operations stack with 4000+ capability points across billing, monitoring, and strategy.",
+        "theme": "sky"
+      },
+      {
+        "title": "E-Coupons",
+        "badge": "Merchant marketing",
+        "body": "Issue and redeem coupons for lots and nearby merchants to activate traffic and extra revenue.",
+        "theme": "peach"
+      },
+      {
+        "title": "Ads Platform",
+        "badge": "Traffic monetization",
+        "body": "Connect lot and driver touchpoints so idle attention becomes sustainable ad income.",
+        "theme": "rose"
+      },
+      {
+        "title": "Settlement",
+        "badge": "Clearing & ledger",
+        "body": "Automatic rebate settlement, clearing, and reconciliation reports for transparent partner books.",
+        "theme": "lime"
+      },
+      {
+        "title": "Open Platform",
+        "badge": "API integration",
+        "body": "Open APIs for providers, property owners, and third-party systems to integrate quickly.",
+        "theme": "indigo"
+      }
+    ],
+    "compareTitleBefore": "WeiBoYun pure cloud",
+    "compareTitleAfter": "Other edge-cloud platforms",
+    "compareLead": "Architecture · Stability · Business models · Build cost · Operations — side by side",
+    "compareEyebrow": "Platform comparison",
+    "compareOursLabel": "WeiBoYun pure cloud",
+    "compareTheirsLabel": "Other edge-cloud platforms",
+    "compareBadge": "Recommended",
+    "compareRows": [
+      {
+        "label": "Product",
+        "ours": "Full-stack cloud, always iterating",
+        "theirs": "Fragmented, uneven modules"
+      },
+      {
+        "label": "Build cost",
+        "ours": "No hardware lock-in",
+        "theirs": "Heavy project spend"
+      },
+      {
+        "label": "Networking",
+        "ours": "Cloud deploy, scale on demand",
+        "theirs": "Complex local networking"
+      },
+      {
+        "label": "Security",
+        "ours": "Isolation + access audit",
+        "theirs": "Scattered edge data"
+      },
+      {
+        "label": "Operations",
+        "ours": "Seating + after-sales + hosting",
+        "theirs": "On-site labor dependent"
+      },
+      {
+        "label": "Ads",
+        "ours": "Traffic-linked monetization",
+        "theirs": "Weak ad revenue"
+      },
+      {
+        "label": "Business model",
+        "ours": "Nine rebates, auto settlement",
+        "theirs": "Limited models"
+      },
+      {
+        "label": "Architecture",
+        "ours": "Pure-cloud mid-platform",
+        "theirs": "Hybrid edge-cloud split"
+      },
+      {
+        "label": "Stability",
+        "ours": "7×24 cloud hosting",
+        "theirs": "Slower incident recovery"
+      }
+    ],
+    "ctaTitle": "Build the next parking ecosystem with WeiBoYun",
+    "ctaBody": "Whether you are a provider, operator, or property owner — reach out to start a partnership.",
+    "whoTitle": "Who are “we”?",
+    "whoLead": "Since entering internet parking in 2012, the team has invented many industry products and built fourteen years of smart-parking depth.",
+    "whoEyebrow": "About us",
+    "whoMilestoneLabel": "Milestone",
+    "whoMilestones": [
+      {
+        "year": "2012",
+        "title": "Launched China’s first mobile internet parking platform",
+        "points": [
+          "Founded Jinan Daxing Information Technology and launched China’s first mobile internet parking platform.",
+          "Delivered China’s first smart-parking voice order recognition and submission system — starting the mobile internet parking industry path."
+        ]
+      },
+      {
+        "year": "2014",
+        "title": "Built a unified parking brand and invented e-coupons",
+        "points": [
+          "Launched China’s first electronic coupon platform service, replacing chaotic paper booth coupons.",
+          "By late 2014 the team moved to Beijing to build a unified domestic parking brand."
+        ]
+      },
+      {
+        "year": "2022",
+        "title": "Founded WeiBoYun pure-cloud architecture with auto O&M",
+        "points": [
+          "China’s first flagship smart-parking cloud with auto wake/cleanup and fault-escape capability.",
+          "Launched mobile cloud booth, emergency charging, mobile cloud duty, linkage, and auto refund products."
+        ]
+      },
+      {
+        "year": "2025",
+        "title": "Vehicles online, AI enters, diversified monetization",
+        "points": [
+          "Released a leading global payment-settlement AI hub, with IoV services, owner profiling, and entry/exit alerts for refined ops.",
+          "Launched nine business models and product lines such as monthly-card top-up and collection algorithms to upgrade the parking industry."
+        ]
+      },
+      {
+        "year": "2026",
+        "title": "AI global automated after-sales · free cloud seating",
+        "points": [
+          "Order-level realtime analytics and vehicle trajectory services; AI and cloud algorithms automate 70% of after-sales.",
+          "Industry-first 7×24 vehicle-level cloud hosting and lot-level after-sales with minute response; space-level control for efficient bay use."
+        ]
+      }
+    ]
+  },
+  "upgrade": {
+    "title": "Industry Upgrade",
+    "subtitle": "From hardware sales to asset-light operations",
+    "lead": "WeiBoYun helps parking partners upgrade their business model: cloud capability instead of heavy assets, with rebate sharing and white-label branding for durable growth.",
+    "sections": [
+      {
+        "title": "A clear transformation path",
+        "body": "Shift from one-off equipment sales to cloud hosting, revenue share, and maintenance subscriptions — cutting inventory and after-sales burden."
+      },
+      {
+        "title": "Own-brand customization",
+        "body": "Custom domain, logo, title, and brand identity so providers present a complete brand experience."
+      },
+      {
+        "title": "Cloud services for nine models",
+        "body": "Matching cloud products for each model with automatic settlement, clearing, and bookkeeping."
+      }
+    ]
+  },
+  "products": {
+    "title": "Solutions",
+    "subtitle": "Eight service platforms across the parking value chain",
+    "lead": "WeiBoYun modularizes parking operations into composable platforms — launch what you need, expand by scenario.",
+    "platforms": [
+      {
+        "title": "Lot operations",
+        "body": "Access, billing, monthly cards, coupons, and lane policies in one place."
+      },
+      {
+        "title": "Cloud attendant / seating",
+        "body": "Remote seating for exceptions and intercom — lower on-site labor cost."
+      },
+      {
+        "title": "Fee recovery",
+        "body": "Detect unpaid and evasion cases with recovery workflows and revenue share."
+      },
+      {
+        "title": "Finance & clearing",
+        "body": "Automatic settlement and multi-party rebate rules."
+      },
+      {
+        "title": "Membership & growth",
+        "body": "Off-peak monthly cards, shared parking, visitor booking, and more."
+      },
+      {
+        "title": "EV bay platform",
+        "body": "EV bay management linked with operational data."
+      },
+      {
+        "title": "E-invoice platform",
+        "body": "Electronic invoices for parking fees and enterprise workflows."
+      },
+      {
+        "title": "White-label brand",
+        "body": "Custom domain, logo, title, and visual identity."
+      }
+    ]
+  },
+  "technology": {
+    "title": "Technology",
+    "subtitle": "A stable, secure, settleable cloud foundation",
+    "lead": "Engineering depth for large-scale lot connectivity: high availability, permissions and audit, plus automated clearing and settlement.",
+    "points": [
+      {
+        "title": "High availability & elasticity",
+        "body": "Cloud-native deployment for multi-lot concurrency and peak elasticity."
+      },
+      {
+        "title": "Security & compliance",
+        "body": "Role-based access, audit trails, and data isolation for lots and partners."
+      },
+      {
+        "title": "Automated clearing",
+        "body": "Configurable rebate rules with automatic settlement and bookkeeping."
+      },
+      {
+        "title": "End-to-end observability",
+        "body": "Orders, lanes, exceptions, and seating actions remain traceable."
+      }
+    ]
+  },
+  "ads": {
+    "title": "Ad Platform",
+    "subtitle": "Digitize parking-lot media inventory",
+    "lead": "Bring barrier screens, in-lot displays, and traffic touchpoints into one ad operations capability for incremental revenue.",
+    "sections": [
+      {
+        "title": "Inventory mapping",
+        "body": "Manage screens and exposure slots — know what can be sold."
+      },
+      {
+        "title": "Delivery & scheduling",
+        "body": "Creative delivery, scheduling, and basic performance stats (placeholder capability)."
+      },
+      {
+        "title": "Linked with operations",
+        "body": "Ad revenue can enter the rebate system alongside core parking income."
+      }
+    ]
+  },
+  "open": {
+    "title": "Open Platform",
+    "subtitle": "Connect ecosystems, accelerate integration",
+    "lead": "Open capabilities for providers and integrators — lower integration cost and shorten time-to-live.",
+    "sections": [
+      {
+        "title": "APIs & webhooks",
+        "body": "Core lot, order, payment, and membership interfaces (marketing overview; formal docs later)."
+      },
+      {
+        "title": "Partner onboarding",
+        "body": "Standard onboarding and sandbox testing for pilots and scale-out."
+      },
+      {
+        "title": "Ecosystem expansion",
+        "body": "Connect property, payments, charging, and city platforms into a fuller loop."
+      }
+    ]
+  },
+  "dataViz": {
+    "title": "Data Visualization",
+    "subtitle": "Make operations decisions visible",
+    "lead": "Dashboards for lot ops, finance, and regional management — turn throughput, occupancy, and exceptions into action.",
+    "sections": [
+      {
+        "title": "Operations dashboard",
+        "body": "Traffic, turnover, exceptions, and seating efficiency on one screen."
+      },
+      {
+        "title": "Finance dashboard",
+        "body": "Revenue mix, rebate outcomes, and recovery performance visualized."
+      },
+      {
+        "title": "Regional / city view",
+        "body": "Multi-lot rollups and comparisons for providers and city-scale management."
+      }
+    ]
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "Cloud only — built for parking partners",
+    "lead": "WeiBoYun focuses on the smart-parking industry cloud. We do not sell hardware. We co-build sustainable asset-light growth with providers, operators, and property owners.",
+    "missionTitle": "Our mission",
+    "missionBody": "Empower industry partners with high-quality cloud capability so every lot can access professional operations, transparent rebate sharing, and reliable after-sales.",
+    "timelineTitle": "Milestones (placeholder)",
+    "timeline": [
+      { "year": "2014", "event": "Launched mobile-internet parking cloud services" },
+      { "year": "2018", "event": "Expanded rebate sharing and multi-model capabilities" },
+      { "year": "2022", "event": "Strengthened cloud seating, recovery, and clearing" },
+      { "year": "2026", "event": "Continuing to grow eight platforms and the open ecosystem" }
+    ],
+    "ctaTitle": "Let’s talk partnership",
+    "ctaBody": "Contact us by phone or email for proposals and demos."
+  },
+  "legal": {
+    "title": "Legal",
+    "subtitle": "User agreement & privacy policy",
+    "lead": "Placeholder text for the marketing site. Replace with counsel-approved versions before production launch.",
+    "agreementTitle": "User Agreement",
+    "agreementBody": "By accessing or using the WeiBoYun website and related services, you agree to applicable laws and the terms published on this site. Unauthorized copying, distribution, or commercial use of site content is prohibited. Specific services are governed by separately executed partnership agreements.",
+    "privacyTitle": "Privacy Policy",
+    "privacyBody": "We process contact details you voluntarily submit only as needed for consultation and partnership communication, and apply reasonable safeguards. We do not sell personal information to unrelated third parties. To access, correct, or delete your information, contact partner@weiboyun.com."
+  }
+}
